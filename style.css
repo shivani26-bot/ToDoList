@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(33, 161, 194);
+  background: linear-gradient(
+    125deg,
+    rgba(33, 161, 194, 1) 0%,
+    rgba(31, 195, 241, 1) 100%
+  );
+  padding: 10px;
+}
+
+.todo-container {
+  width: 100%;
+
+  max-width: 540px;
+
+  box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.4);
+  background-color: rgb(219, 234, 247);
+
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+
+  /* margin left right auto to center the element  */
+  margin: 100px auto;
+}
+
+.todo-container h2 img {
+  width: 40px;
+  height: 40px;
+
+  margin-left: 10px;
+}
+
+.todo-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #002765;
+}
+.search {
+  margin-top: 20px;
+  display: flex;
+  background: #ffff;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+.search button {
+  border-radius: 20px;
+  height: 40px;
+  width: 100px;
+
+  border: none;
+  outline: none;
+  background: #ff5945;
+  color: #fff;
+  cursor: pointer;
+}
+.search input {
+  border-radius: 20px;
+  height: 40px;
+  /* it will take the full width with flex =1 */
+  flex: 1;
+  padding: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.tasks {
+  background: #ffff;
+  border-radius: 20px;
+  padding: 2px;
+  display: flex;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  /* align-items: center; */
+}
+
+.tasks img {
+  width: 15px;
+  height: 15px;
+}
+
+ul li {
+  list-style: none;
+  padding: 12px 8px 12px 50px;
+  font-size: 17px;
+  /* it prevents the user from selecting the text */
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML. While the end result is not actually in the DOM, it appears on the page as if it is */
+
+ul li::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/radio.png);
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(images/accept.png);
+}
+
+/* we can also achieve the same using span  */
+/* ul li span {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 50px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius:50%
+}
+ul li span:hover {
+  background-color: #edeef0;
+} */
+.delete {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 2px;
+}
